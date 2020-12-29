@@ -14,4 +14,8 @@ RUN apt-get update && apt-get install -y maven
 ENV MAVEN_HOME=/usr/share/maven
 RUN mvn -version
 
+WORKDIR /opt/
+RUN mkdir wildfly-app-log
+RUN chmod -R 777 /opt/wildfly-app-log
+
 USER jenkins
